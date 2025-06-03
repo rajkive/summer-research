@@ -1,6 +1,6 @@
 function login() {
-    const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
 
     if (username === '' || password === '') {
         alert('Please enter both username and password');
@@ -13,7 +13,7 @@ function login() {
 
 function addTask() {
     const input = document.getElementById('taskInput');
-    const taskText = input.value.trim();
+    const taskText = input.value;
 
     if (taskText === '') return;
 
