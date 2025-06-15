@@ -103,3 +103,40 @@ li {
     color: white;
     cursor: pointer;
 }
+
+.moving-btn {
+    background-color: #e53e3e !important;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.moving-btn:hover {
+    background-color: #c53030 !important;
+}
+
+.playground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.moving-btn.moving {
+    position: fixed;
+    pointer-events: auto;
+    z-index: 1000;
+    width: auto;
+}
+
+.message {
+    text-align: center;
+    margin: 10px 0;
+    color: #666;
+    font-style: italic;
+    min-height: 20px;
+}

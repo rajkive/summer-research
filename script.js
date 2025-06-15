@@ -33,6 +33,56 @@ function deleteTask(button) {
     button.parentElement.remove();
 }
 
+let attemptCount = 0;
+let isMoving = false;
+
+function getRandomPosition() {
+    const movingBtn = document.getElementById('movingBtn');
+    if (!movingBtn) return { x: 0, y: 0 };
+    
+    const margin = 100;
+    const maxX = window.innerWidth - movingBtn.offsetWidth - margin;
+    const maxY = window.innerHeight - movingBtn.offsetHeight - margin;
+    
+    return {
+        x: Math.random() * (maxX - margin) + margin,
+        y: Math.random() * (maxY - margin) + margin
+    };
+}
+
+function moveButton() {
+    if (isMoving) return;
+    
+    const movingBtn = document.getElementById('movingBtn');
+    const message = document.getElementById('message');
+    
+    if (!movingBtn) return;
+    
+    isMoving = true;
+    attemptCount++;
+    
+    const pos = getRandomPosition();
+    
+    movingBtn.classList.add('moving');
+    movingBtn.style.left = pos.x + 'px';
+    movingBtn.style.top = pos.y + 'px';
+    
+    const messages = [
+        "Oops!",,
+        "Nice try!",
+        "Keep trying!",
+    ];
+    
+    if (message) {
+        message.textContent = messages[Math.min(attemptCount - 1, messages.length - 1)];
+    }
+    
+    setTimeout(() => {
+        isMoving = false;
+    }, 300);
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('taskInput').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
@@ -51,4 +101,41 @@ document.addEventListener('DOMContentLoaded', function () {
             login();
         }
     });
+
+
+const movingBtn = document.getElementById('movingBtn');
+    if (movingBtn) {
+        movingBtn.addEventListener('mouseenter', moveButton);
+
+        // Reset button position when clicking elsewhere
+        document.addEventListener('click', (e) => {
+            if (e.target !== movingBtn && movingBtn.classList.contains('moving')) {
+                setTimeout(() => {
+                    movingBtn.classList.remove('moving');
+                    movingBtn.style.left = '';
+                    movingBtn.style.top = '';
+                    const message = document.getElementById('message');
+                    if (message) {
+                        message.textContent = '';
+                    }
+                    attemptCount = 0;
+                }, 2000);
+            }
+        });
+
+        // Prevent clicking when moving
+        movingBtn.addEventListener('click', (e) => {
+            const message = document.getElementById('message');
+            if (movingBtn.classList.contains('moving')) {
+                e.preventDefault();
+                if (message) {
+                    message.textContent = "You can't click me while I'm moving!";
+                }
+            } else {
+                if (message) {
+                    message.textContent = "You managed to click me!";
+                }
+            }
+        });
+    };
 });
