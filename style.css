@@ -140,3 +140,15 @@ li {
     font-style: italic;
     min-height: 20px;
 }
+
+.invisible-text {
+    text-align: center;
+    color: whitesmoke;
+    margin: 30px;
+}
+
+.invisible-text-2{
+    text-align: center;
+    color: whitesmoke;
+    margin: 30px;
+}
