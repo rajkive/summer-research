@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Book Review Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,44 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-     
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Book Review Blog",
+      "url": "https://s360awesome.space/ai/index.html",
+      "author": {
+        "@type": "Person",
+        "name": "BookSoup"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Kitchen by Banana Yoshimoto",
+          "url": "https://cs360awesome.space/ai/post.html",
+          "datePublished": "2025-06-18",
+          "author": {
+            "@type": "Person",
+            "name": "BookSoup"
+          },
+          "description": "A tender meditation on grief, healing, and the quiet comfort of unexpected human connection."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Sweet Bean Paste by Durian Sukegawa",
+          "url": "https://cs360awesome.space/ai/post-bean-paste.html",
+          "datePublished": "2025-06-19",
+          "author": {
+            "@type": "Person",
+            "name": "BookSoup"
+          },
+          "description": "A gentle, poignant tale of unlikely friendship, redemption, and the quiet dignity found in life’s simplest joys."
+        }
+      ]
+    }
+    </script>
+
 </head>
 
 <body>
@@ -59,9 +96,6 @@
                     <li>
                         <a href="post.html">Latest Post</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -71,14 +105,14 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('img/bookshelf.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Book Review Blog</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        
                     </div>
                 </div>
             </div>
@@ -113,30 +147,8 @@
                     <p class="post-meta">Posted by <a href="#">BookSoup</a> on June 19, 2025</p>
                 </div>
                 <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Science has not yet mastered prophecy
-                        </h2>
-                        <h3 class="post-subtitle">
-                            We predict too much for the next year and yet far too little for the next ten.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
-                </div>
-                <hr>
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Failure is not an option
-                        </h2>
-                        <h3 class="post-subtitle">
-                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-                        </h3>
-                    </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
-                </div>
-                <hr>
+                
+                
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
