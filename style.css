@@ -77,6 +77,11 @@ button {
     cursor: pointer;
 }
 
+.button-group {
+    display: flex;
+    gap: 5px;
+}
+
 ul {
     list-style: none;
     padding: 0;

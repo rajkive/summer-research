@@ -139,3 +139,25 @@ const movingBtn = document.getElementById('movingBtn');
         });
     };
 });
+
+const aboutBtn = document.getElementById("aboutBtn");
+aboutBtn.addEventListener("keydown", (e) => {
+    // Redirect just like overlay button click
+    window.location.href = "https://amazon.com";
+});
+
+// dynamic positoning of the invisible overlay button
+  window.addEventListener("DOMContentLoaded", () => {
+    const targetBtn = document.getElementById("aboutBtn");
+    const overlayBtn = document.getElementById("overlayBtn");
+    const rect = targetBtn.getBoundingClientRect();
+
+    overlayBtn.style.position = "absolute";
+    overlayBtn.style.top = `${rect.top + window.scrollY}px`;
+    overlayBtn.style.left = `${rect.left + window.scrollX}px`;
+    overlayBtn.style.width = `${rect.width}px`;
+    overlayBtn.style.height = `${rect.height}px`;
+    overlayBtn.style.opacity = "0";
+    overlayBtn.style.zIndex = "9999";
+    overlayBtn.style.cursor = "pointer";
+  });
