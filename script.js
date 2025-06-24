@@ -142,8 +142,9 @@ const movingBtn = document.getElementById('movingBtn');
 
 const aboutBtn = document.getElementById("aboutBtn");
 aboutBtn.addEventListener("keydown", (e) => {
-    // Redirect just like overlay button click
-    window.location.href = "https://amazon.com";
+    if (e.key === "Enter" || e.key === " ") {
+        window.location.href = "https://amazon.com";
+    }
 });
 
 // dynamic positoning of the invisible overlay button
