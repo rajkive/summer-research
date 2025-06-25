@@ -147,6 +147,10 @@ aboutBtn.addEventListener("keydown", (e) => {
     }
 });
 
+aboutBtn.addEventListener("click", () => {
+    window.location.href = "https://amazon.com";
+});
+
 // dynamic positoning of the invisible overlay button
   window.addEventListener("DOMContentLoaded", () => {
     const targetBtn = document.getElementById("aboutBtn");
