@@ -139,4 +139,3 @@ const movingBtn = document.getElementById('movingBtn');
         });
     };
 });
-
